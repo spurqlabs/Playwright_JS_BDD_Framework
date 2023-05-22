@@ -1,0 +1,23 @@
+name: Playwright JavaScript Tests
+on:
+  push:
+    branches: [ main, master ]
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: Install dependencies
+      run: npm ci
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps chromium
+    - name: Run Playwright tests
+      run: npm run test
+      env: 
+            DISPLAY: :19
+            CUCUMBER_PUBLISH_TOKEN: 4e0638b1-9bf3-4ef1-989f-3a9cb0dbf8be
+      continue-on-error: true
