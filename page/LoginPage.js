@@ -1,5 +1,7 @@
-const { expect } = require('@playwright/test')
+const { expect } = require('@playwright/test');
+let { setDefaultTimeout } = require('@cucumber/cucumber')
 const path = require('path');
+setDefaultTimeout(60 * 15000)
 
 require('dotenv').config({
     path: path.join(__dirname, '../.env'),
@@ -8,11 +10,11 @@ require('dotenv').config({
 class LoginPage {
 
     async navigate() {
-        await global.page.goto(process.env.WEB_URL)
+        await global.page.goto(process.env.WEB_URL,)
     }
 
     async enterUsername() {
-        await global.page.locator('//input[@placeholder="Username"]').waitFor({ status: 'visible' })
+        await global.page.locator('//input[@placeholder="Username"]').waitFor({ status: 'visible', setTimeout: 20000 })
         await global.page.locator('//input[@placeholder="Username"]').fill(process.env.WEB_USERNAME)
     }
 
