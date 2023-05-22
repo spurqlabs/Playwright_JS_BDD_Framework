@@ -1,0 +1,21 @@
+{
+  "name": "playwright-js-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cucumber-js --require ./steps/*.js --tags @login --publish"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.32.3",
+    "cucumber-html-reporter": "^6.0.0",
+    "playwright": "^1.32.3"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^8.11.1",
+    "dotenv": "^16.0.3"
+  }
+}
