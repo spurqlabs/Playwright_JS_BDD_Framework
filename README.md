@@ -26,4 +26,4 @@ This is BDD automation framework using Cucumber, JavaScript and Playwright which
 - `Windows`
 
 #### OS for Execution on CI/CD:
-- `Self Hosted`
+- `Windows`
